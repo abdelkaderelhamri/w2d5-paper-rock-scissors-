@@ -1,34 +1,35 @@
 import random
 
-computer_choices =["rock", "paper", "scissors"]
+computer_choices =["Rock", "Paper", "Scissors"]
 
 while True:
-    player_choice = input("Enter your choice(rock, paper, scissors), or 'Q' to end the game: ")
+    computer_choice = random.choice(computer_choices)
+    player_choice = input("Enter your choice (Rock, Paper, Scissors), or 'Q' to end the game: ")
 
-    if player_choice == 'q':
-        print("Thanks for playing")
+    if player_choice.lower() != 'q':
+        print (f"\nThe computer chose {computer_choice.lower()} and your choice was {player_choice}.")
+    if player_choice.lower() == 'q':
+        print("Thanks for playing!")
         break
-
-    if player_choice not in computer_choices:
-        print("invalid choice. please type rock, paper, or scissor.")
+    elif player_choice.lower() == computer_choice.lower():
+        print("Game Tied...boring\n")
+    elif player_choice.lower() == "rock" and computer_choice.lower() == "paper":
+        print("You Lose :-( \n")
+    elif player_choice.lower() == "rock" and computer_choice.lower() == "scissors":
+        print("You Win!\n")
+    elif player_choice.lower() == "paper" and computer_choice.lower() == "scissors":
+        print("You Lose :-(\n")
+    elif player_choice.lower() == "paper" and computer_choice.lower() == "rock":
+        print("You Win!\n")
+    elif player_choice.lower() == "scissors" and computer_choice.lower() == "rock":
+        print("You Lose :-(\n")
+    elif player_choice.lower() == "scissors" and computer_choice.lower() == "paper":
+        print("You Win!\n")
+    else: 
+        print("Invalid choice. Please type Rock, Paper, or Scissors.\nSince you ruined it, the computer will choose again too.\n")
         continue
 
-    computer_choice = random.choice(computer_choices)
-    print (computer_choice)
 
-    if player_choice == computer_choice:
-        print("game tied")
-    elif player_choice == "rock" and computer_choice == "paper":
-        print("you lose")
-    elif player_choice == "rock" and computer_choice == "scissors":
-        print("you win")
-    elif player_choice == "paper" and computer_choice == "scissors":
-        print("you lose")
-    elif player_choice == "paper" and computer_choice == "rock":
-        print("you win")
-    elif player_choice == "scissors" and computer_choice == "rock":
-        print("you lose")
-    elif player_choice == "scissors" and computer_choice == "paper":
-        print("you win")
+
         
     
