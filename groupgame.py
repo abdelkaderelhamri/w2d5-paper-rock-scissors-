@@ -4,7 +4,8 @@ computer_choices =["rock", "paper", "scissors"]
 
 while True:
     player_choice = input("Enter your choice(rock, paper, scissors), or 'Q' to end the game: ")
-
+    computer_choice = random.choice(computer_choices)
+    print (computer_choice) 
     if player_choice == 'q':
         print("Thanks for playing")
         break
@@ -12,9 +13,7 @@ while True:
     if player_choice not in computer_choices:
         print("invalid choice. please type rock, paper, or scissor.")
         continue
-
-    computer_choice = random.choice(computer_choices)
-    print (computer_choice)
+    
 
     if player_choice == computer_choice:
         print("game tied")
