@@ -3,10 +3,13 @@ import random
 computer_choices =["Rock", "Paper", "Scissors"]
 
 while True:
-    player_choice = input("Enter your choice(rock, paper, scissors), or 'Q' to end the game: ")
+    computer_choice = random.choice(computer_choices)
+    player_choice = input("Enter your choice (Rock, Paper, Scissors), or 'Q' to end the game: ")
 
-    if player_choice == 'q':
-        print("Thanks for playing")
+    if player_choice.lower() != 'q':
+        print (f"\nThe computer chose {computer_choice.lower()} and your choice was {player_choice}.")
+    if player_choice.lower() == 'q':
+        print("Thanks for playing!")
         break
     elif player_choice.lower() == computer_choice.lower():
         print("Game Tied...boring\n")
@@ -26,8 +29,7 @@ while True:
         print("Invalid choice. Please type Rock, Paper, or Scissors.\nSince you ruined it, the computer will choose again too.\n")
         continue
 
-    computer_choice = random.choice(computer_choices)
-    print (computer_choice)
+
 
         
     
